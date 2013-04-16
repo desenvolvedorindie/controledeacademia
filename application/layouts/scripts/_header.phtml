@@ -1,0 +1,96 @@
+<?php echo $this->doctype() ?>
+<html>
+    <head>
+        <?php echo $this->headTitle('Controle de Academia') ?>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <?php echo $this->headMeta() ?>
+
+        <?php $this->headScript()->appendFile('/js/jquery.js') ?>
+        <?php $this->headScript()->appendFile('/js/bootstrap.js') ?>
+        <?php $this->headScript()->appendFile('/js/jquery-ui.js') ?>
+        <?php $this->headScript()->appendFile('/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9')) ?>
+        
+        <?php echo $this->headScript() ?>
+
+        <?php $this->headLink()->appendStylesheet('/css/jquery-ui.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet('/css/bootstrap.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet('/css/font-awesome.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet('/css/font-awesome-ie7.min.css', 'screen', 'IE 7') ?>
+        <?php $this->headLink()->appendStylesheet('/css/global.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet('/css/bootstrap-responsive.css', 'screen') ?>
+        
+        <?php echo $this->headLink() ?>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <div class="navbar navbar-fixed-top">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="brand" href="#">Controle de Academia</a>
+                            <div class="nav-collapse collapse">
+                                <ul class="nav">
+                                    <li class="active"><a href="#"><i class="icon-home"></i> Início</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-building"></i> Academia <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Pagamentos</a></li>
+                                            <li><a href="#">Controle de Alunos</a></li>
+                                            <li><a href="#">Controle de Funcionários</a></li>
+                                            <li><a href="#">Controle de Acesso</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-pencil"></i> Cadastro <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Alunos</a></li>
+                                            <li><a href="#">Funcionários</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-money"></i> Caixa <b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#">Históricos de Pagamento</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#"><i class="icon-info-sign"></i> Sobre</a></li>
+                                </ul>
+                                <ul class="nav pull-right">
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Entrar <b class="caret"></b></a>
+                                        <form class="login-menu dropdown-menu well">
+                                            <fieldset>
+                                                <div class="control-group">
+                                                    <label class="control-label">Usuário</label>
+                                                    <div class="controls">
+                                                        <input type="text" placeholder="Nome de usuário">
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <label class="control-label">Senha</label>
+                                                    <div class="controls">
+                                                        <input type="password" placeholder="Senha">
+                                                    </div>
+                                                </div>
+
+                                                <div class="control-group">
+                                                    <div class="controls">
+                                                        <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div><!--/.nav-collapse -->
+                        </div><!--/.container -->
+                    </div><!--/.navbar-inner -->
+                </div><!--/.navbar -->
+            </div>
