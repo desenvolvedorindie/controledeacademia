@@ -12,15 +12,16 @@ CREATE  TABLE IF NOT EXISTS `gymcontrol`.`employees` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
   `name` VARCHAR(80) NOT NULL ,
   `phone` VARCHAR(11) NULL ,
-  `cellphone` VARCHAR(45) NULL ,
+  `cellphone` VARCHAR(45) NOT NULL ,
   `cpf` VARCHAR(45) NOT NULL ,
   `email` VARCHAR(60) NULL ,
   `street` VARCHAR(70) NULL ,
-  `house-number` INT(6) NULL ,
-  `neighborhood` VARCHAR(45) NULL ,
+  `houseNumber` INT(6) NULL ,
+  `neighBorhood` VARCHAR(45) NULL ,
   `cep` CHAR(8) NULL ,
   `city` VARCHAR(45) NULL ,
-  PRIMARY KEY (`id`) )
+  PRIMARY KEY (`id`) ,
+  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) )
 ENGINE = InnoDB;
 
 
@@ -29,6 +30,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `gymcontrol`.`customer` (
   `id` INT(9) UNSIGNED NOT NULL AUTO_INCREMENT ,
+  `register` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
   `cpf` CHAR(11) NOT NULL ,
   `name` VARCHAR(80) NOT NULL ,
   `gender` ENUM('male','female') NOT NULL ,
@@ -37,14 +39,14 @@ CREATE  TABLE IF NOT EXISTS `gymcontrol`.`customer` (
   `cellphone` VARCHAR(11) NOT NULL ,
   `email` VARCHAR(60) NOT NULL ,
   `street` VARCHAR(70) NULL ,
-  `house-number` INT(6) NULL ,
+  `houseNumber` INT(6) NULL ,
   `neighborhood` VARCHAR(45) NULL ,
   `cep` CHAR(8) NULL ,
   `city` VARCHAR(45) NOT NULL ,
-  `monthly-payment` DECIMAL(5,2) NOT NULL ,
+  `status` ENUM('active', 'inactive') NOT NULL DEFAULT inactive ,
+  `monthlyPayment` DECIMAL(5,2) NOT NULL ,
   `maturity` INT(2) NOT NULL ,
   `notes` TEXT NULL ,
-  `register` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
   PRIMARY KEY (`id`) ,
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) )
 ENGINE = InnoDB;
@@ -55,10 +57,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `gymcontrol`.`payment` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
-  `customer` INT(9) UNSIGNED NULL ,
-  `value` DECIMAL(5,2) NULL DEFAULT 0 ,
+  `customer` INT(9) UNSIGNED NOT NULL ,
+  `value` DECIMAL(5,2) NOT NULL DEFAULT 0 ,
   `description` VARCHAR(50) NULL ,
-  `open` ENUM('yes','no') NULL ,
+  `open` ENUM('yes','no') NOT NULL DEFAULT yes ,
+  `date` DATETIME NOT NULL DEFAULT now() ,
   PRIMARY KEY (`id`) ,
   INDEX `fgk_customer_idx` (`customer` ASC) ,
   CONSTRAINT `fgk_customer`
@@ -75,8 +78,9 @@ ENGINE = InnoDB;
 CREATE  TABLE IF NOT EXISTS `gymcontrol`.`user` (
   `employees` INT UNSIGNED NOT NULL ,
   `password` BINARY(20) NULL ,
+  INDEX `fgk_employess_idx` (`employees` ASC) ,
   PRIMARY KEY (`employees`) ,
-  CONSTRAINT `fkg_employees`
+  CONSTRAINT `fgk_employess`
     FOREIGN KEY (`employees` )
     REFERENCES `gymcontrol`.`employees` (`id` )
     ON DELETE NO ACTION
