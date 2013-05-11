@@ -15,6 +15,31 @@
     text-align: justify;
 }
 
+.bs-docs{
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-bottom: 50px;
+    padding-right: 40px;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+a.custom-action{
+    text-decoration: none;
+    color: background;
+    padding-left: 15px;
+}
+
+a.action-remove{
+    color: #d14;
+}
+
+.nav-register{
+    -webkit-margin-after: 0em;
+    margin-bottom: 0em;
+}
+
 /*
  *  Footer
  */
