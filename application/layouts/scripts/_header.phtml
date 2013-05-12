@@ -6,21 +6,21 @@
 
         <?php echo $this->headMeta() ?>
 
-        <?php $this->headScript()->appendFile('/js/jquery.js') ?>
-        <?php $this->headScript()->appendFile('/js/bootstrap.js') ?>
-        <?php $this->headScript()->appendFile('/js/jquery-ui.js') ?>
-        <?php $this->headScript()->appendFile('/js/jquery-ui-1.10.2.custom.js') ?>
-        <?php $this->headScript()->appendFile('/js/jquery.maskedinput.js') ?>
-        <?php $this->headScript()->appendFile('/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9')) ?>
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/jquery.js') ?>
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/bootstrap.js') ?>
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/jquery-ui.js') ?>
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/jquery-ui-1.10.2.custom.js') ?>
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/jquery.maskedinput.js') ?>
+        <?php $this->headScript()->appendFile($this->baseURL() . '/js/html5shiv.js', 'text/javascript', array('conditional' => 'lt IE 9')) ?>
         
         <?php echo $this->headScript() ?>
 
-        <?php $this->headLink()->appendStylesheet('/css/jquery-ui.css', 'screen') ?>
-        <?php $this->headLink()->appendStylesheet('/css/bootstrap.css', 'screen') ?>
-        <?php $this->headLink()->appendStylesheet('/css/font-awesome.css', 'screen') ?>
-        <?php $this->headLink()->appendStylesheet('/css/font-awesome-ie7.min.css', 'screen', 'IE 7') ?>
-        <?php $this->headLink()->appendStylesheet('/css/global.css', 'screen') ?>
-        <?php $this->headLink()->appendStylesheet('/css/bootstrap-responsive.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/jquery-ui.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/bootstrap.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/font-awesome.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/font-awesome-ie7.min.css', 'screen', 'IE 7') ?>
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/global.css', 'screen') ?>
+        <?php $this->headLink()->appendStylesheet($this->baseURL() . '/css/bootstrap-responsive.css', 'screen') ?>
         
         <?php echo $this->headLink() ?>
     </head>
@@ -57,20 +57,20 @@
                             <a class="brand">Controle de Academia</a>
                             <div class="nav-collapse collapse">
                                 <ul class="nav">
-                                    <li><a href="#"><i class="icon-home"></i> Início</a></li>
+                                    <li><a href="<?php echo $this->url(array('controller' => 'index', 'action' => 'index'), null, true) ?>"><i class="icon-home"></i> Início</a></li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-pencil"></i> Cadastro <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">Alunos</a></li>
-                                            <li><a href="#">Funcionários</a></li>
+                                            <li><a href="<?php echo $this->url(array('controller' => 'customer', 'action' => 'create'), null, true) ?>">Alunos</a></li>
+                                            <li><a href="<?php echo $this->url(array('controller' => 'employees', 'action' => 'create'), null, true) ?>">Funcionários</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-building"></i> Academia <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li><a href="#">Pagamentos</a></li>
-                                            <li><a href="#">Controle de Alunos</a></li>
-                                            <li><a href="#">Controle de Funcionários</a></li>
+                                            <li><a href="<?php echo $this->url(array('controller' => 'customer', 'action' => 'index'), null, true) ?>">Controle de Alunos</a></li>
+                                            <li><a href="<?php echo $this->url(array('controller' => 'employees', 'action' => 'index'), null, true) ?>">Controle de Funcionários</a></li>
                                             <li><a href="#">Controle de Acesso</a></li>
                                         </ul>
                                     </li>

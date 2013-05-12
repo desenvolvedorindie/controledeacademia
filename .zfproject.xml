@@ -16,8 +16,23 @@
           <actionMethod actionName="login"/>
           <actionMethod actionName="logout"/>
         </controllerFile>
+        <controllerFile controllerName="Customer">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="create"/>
+          <actionMethod actionName="edit"/>
+        </controllerFile>
+        <controllerFile controllerName="Employees">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="create"/>
+          <actionMethod actionName="edit"/>
+        </controllerFile>
       </controllersDirectory>
-      <formsDirectory enabled="false"/>
+      <formsDirectory>
+        <formFile formName="Customer"/>
+        <formFile formName="Employees"/>
+        <formFile formName="SearchCustomer"/>
+        <formFile formName="Payment"/>
+      </formsDirectory>
       <layoutsDirectory>
         <layoutScriptsDirectory>
           <layoutScriptFile layoutName="layout"/>
@@ -42,6 +57,24 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Account">
             <viewScriptFile forActionName="logout"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Customer">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Employees">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Customer">
+            <viewScriptFile forActionName="create"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Customer">
+            <viewScriptFile forActionName="edit"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Employees">
+            <viewScriptFile forActionName="create"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Employees">
+            <viewScriptFile forActionName="edit"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

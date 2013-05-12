@@ -1,6 +1,6 @@
 <?php
 
-class AccountController extends Zend_Controller_Action
+class EmployeesController extends Zend_Controller_Action
 {
     /**
      * @var Zend_Log
@@ -17,12 +17,12 @@ class AccountController extends Zend_Controller_Action
         // action body
     }
 
-    public function loginAction()
+    public function createAction()
     {
-        
+        // action body
     }
 
-    public function logoutAction()
+    public function editAction()
     {
         // action body
     }
