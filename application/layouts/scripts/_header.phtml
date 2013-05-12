@@ -68,7 +68,7 @@
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-building"></i> Academia <b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="#">Pagamentos</a></li>
+                                            <li><a href="<?php echo $this->url(array('controller' => 'customer', 'action' => 'payment'), null, true) ?>">Pagamentos</a></li>
                                             <li><a href="<?php echo $this->url(array('controller' => 'customer', 'action' => 'index'), null, true) ?>">Controle de Alunos</a></li>
                                             <li><a href="<?php echo $this->url(array('controller' => 'employees', 'action' => 'index'), null, true) ?>">Controle de Funcionários</a></li>
                                             <li><a href="#">Controle de Acesso</a></li>

@@ -25,5 +25,8 @@ class CustomerController extends Zend_Controller_Action {
         $this->view->form = new Application_Form_Customer($config);
     }
 
+    public function paymentAction()
+    {
+        // action body
+    }
 }
-
