@@ -1,0 +1,16 @@
+//Arquivo application/configs/forms/id-form.ini
+[form]
+id = "idform"
+method = "POST"
+action = "controller/action"
+
+elements.id.type = "text"
+elements.id.options.label = "Entrada"
+
+elements.submit.type = "submit"
+elements.submit.options.label = "Enviar"
+
+
+//Controller
+$config = new Zend_Config_Ini(APPLICATION_PATH . '/configs/forms/idform.ini', 'form');
+$this->view->form = new Zend_Form($config);

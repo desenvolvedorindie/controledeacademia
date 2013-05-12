@@ -1,0 +1,23 @@
+// Arquivo  application/configs/forms/idform.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <id>idform</id>
+    <method>post</method>
+    <action>controller/action</action>
+    <elements>
+        <id>
+            <type>text</type>
+            <label>Entrada</label>
+        </id>
+        <submit>
+            <type>submit</type>
+            <options>
+                <label>Enviar</label>
+            </options>
+        </submit>
+    </elements>
+</form>
+
+//Controller
+$config = new Zend_Config_Xml(APPLICATION_PATH . '/configs/forms/idform.xml');
+$this->view->form = new Zend_Form($config);

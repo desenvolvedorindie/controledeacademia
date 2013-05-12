@@ -1,0 +1,10 @@
+// Controller
+$form = new Zend_Form();
+
+$form->setAttrib('id', 'idform')
+        ->setMethod(Zend_Form::METHOD_POST)
+        ->setAction('controller/action')
+        ->addElement('text', 'input', array('label' => 'Entrada'))
+        ->addElement('submit', 'submit', array('label' => 'Enviar'));
+
+$this->view->form = $form;

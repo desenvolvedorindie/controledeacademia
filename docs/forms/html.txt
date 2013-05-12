@@ -1,0 +1,15 @@
+//view
+<form id="idform" enctype="application/x-www-form-urlencoded" method="post" action="controller/action">
+    <dl class="zend_form">
+        <dt id="id-label">
+            <label for="id" class="optional">Entrada</label>
+        </dt>
+        <dd id="id-element">
+            <input type="text" name="id" id="id" value="">
+        </dd>
+        <dt id="submit-label">&#160;</dt>
+        <dd id="submit-element">
+            <input type="submit" name="submit" id="submit" value="Enviar">
+        </dd>
+    </dl>
+</form>

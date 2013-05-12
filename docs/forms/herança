@@ -1,0 +1,29 @@
+//Arquivo application/forms/IdForm.php
+class Application_Form_IdForm extends Zend_Form {
+    /**
+     * @var Zend_Form_Element_Text 
+     */
+    private $id;
+    
+    /**
+     * @var Zend_Form_Element_Submit
+     */
+    private $submit;
+    
+    public function init() {
+        $this->setAction('/auth/login')
+                ->setMethod('post')
+                ->setAttrib('id', 'login');
+
+        $this->id = new Zend_Form_Element_Text('id');
+        $this->id ->setOptions(array('label' => 'Entrada'));
+        
+        $this->submit = new Zend_Form_Element_Submit('submit');
+        $this->submit->setOptions(array('label' => 'Enviar'));
+        
+        $this->addElements(array($this->id, $this->submit));
+    }
+}
+
+//Controller
+$loginForm = new Application_Form_IdForm();

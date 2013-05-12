@@ -1,0 +1,22 @@
+// Controller
+$config = array(
+    'id' => 'idform',
+    'method' => Zend_Form::METHOD_POST,
+    'action' => 'controller/action',
+    'elements' => array(
+        'id' => array(
+            'type' => 'text',
+            'options' => array(
+                'label' => 'Entrada',
+            ),
+        ),
+        'submit' => array(
+            'type' => 'submit',
+            'options' => array(
+                'label' => 'Enviar',
+            ),
+        ),
+    )
+);
+
+$this->view->form = new Zend_Form($config);
