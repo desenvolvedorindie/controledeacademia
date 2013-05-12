@@ -12,7 +12,8 @@ class CustomerController extends Zend_Controller_Action {
     }
 
     public function indexAction() {
-        // action body
+        $config = new Zend_Config_Ini(APPLICATION_PATH . '/configs/forms/search-customer.ini', 'form');
+        $this->view->form = new Application_Form_SearchCustomer($config);
     }
 
     public function createAction() {
@@ -27,6 +28,7 @@ class CustomerController extends Zend_Controller_Action {
 
     public function paymentAction()
     {
-        // action body
+        $config = new Zend_Config_Ini(APPLICATION_PATH . '/configs/forms/payment.ini', 'form');
+        $this->view->form = new Application_Form_Payment($config);
     }
 }

@@ -58,10 +58,10 @@ ENGINE = InnoDB;
 CREATE  TABLE IF NOT EXISTS `gymcontrol`.`payment` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT ,
   `customer` INT(9) UNSIGNED NOT NULL ,
+  `date` DATETIME NOT NULL DEFAULT now() ,
   `value` DECIMAL(5,2) NOT NULL DEFAULT 0 ,
   `description` VARCHAR(50) NULL ,
   `open` ENUM('yes','no') NOT NULL DEFAULT yes ,
-  `date` DATETIME NOT NULL DEFAULT now() ,
   PRIMARY KEY (`id`) ,
   INDEX `fgk_customer_idx` (`customer` ASC) ,
   CONSTRAINT `fgk_customer`
