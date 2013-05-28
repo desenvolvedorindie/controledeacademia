@@ -39,7 +39,14 @@
           <layoutScriptFile layoutName="layout"/>
         </layoutScriptsDirectory>
       </layoutsDirectory>
-      <modelsDirectory/>
+      <modelsDirectory>
+        <dbTableDirectory>
+          <dbTableFile dbTableName="Customer"/>
+          <dbTableFile dbTableName="Employees"/>
+          <dbTableFile dbTableName="Payment"/>
+          <dbTableFile dbTableName="User"/>
+        </dbTableDirectory>
+      </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
       <viewsDirectory>
